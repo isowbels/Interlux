@@ -1,0 +1,576 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d2d0d0;
+}
+
+
+
+/* navigation bar */
+.navbar {
+    background-color: #d2d0d0 !important;
+    padding: 1rem 2rem;
+}
+
+/* Logo styling */
+.navbar-brand img {
+    width: 30px;
+    height: 30px;
+
+}
+
+.navbar-brand span {
+    font-weight: bold;
+    color: #5a4d41;
+    /* Adjust the color to match the brand */
+}
+
+/* Link styling */
+.navbar-nav .nav-link {
+    transition: color 0.3s ease ease-in, border-bottom 0.3s ease-in;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff0000;
+    /* Change this to your desired hover color */
+    border-bottom: 2px solid #ff0000;
+    /* Adds underline on hover */
+}
+
+.d-flex a {
+    color: #5a4d41;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+}
+
+.d-flex a:hover {
+    color: #000;
+}
+
+/* Login button styling */
+.login-btn {
+    color: #5a4d41;
+    font-weight: bold;
+    padding-left: 1rem;
+    /* Adds spacing between the icons and the login button */
+}
+
+.login-btn:hover {
+    color: #ff0000;
+    /* Same hover effect as icons */
+}
+
+@media (max-width: 91px) {
+    .navbar-collapse {
+        transition: none;
+        /* Remove transitions to prevent any movement */
+    }
+}
+
+.categories {
+    background-color: #d2d0d0;
+}
+
+
+
+/* advertisement */
+.hero {
+    position: relative;
+    width: 100%;
+    max-height: 600px;
+    /* Sets a max height */
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    /* Adjusts max height */
+    object-fit: fill;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.shop-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 15px;
+    display: inline-block;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #ddd;
+    padding: 20px;
+}
+
+.carousel-container {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+}
+
+.carousel-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    min-width: 250px;
+    max-width: 300px;
+}
+
+.carousel-card img {
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+}
+
+.carousel-card h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.carousel-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Container to center the button */
+.read-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Styling for the 'Read more reviews' button */
+.read-more-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    /* Round edges */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.read-more-btn:hover {
+    background-color: #333;
+}
+
+/* Featured Items Section */
+.featured-items {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.featured-items h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Items Container */
+.items-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Individual Item Card */
+.item-card {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+    width: 250px;
+    position: relative;
+    text-align: center;
+}
+
+.item-card img {
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+}
+
+.item-card h3 {
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.item-card p {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Overlay with Plus Icon */
+.item-overlay {
+    position: absolute;
+    bottom: 150px;
+    right: 30px;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    /* Square with slightly rounded corners */
+    z-index: 1;
+    /* Ensure it appears above the image */
+}
+
+.plus-icon {
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+}
+
+.item-overlay-button:hover {
+    background-color: #ddd;
+}
+
+/* View All Button */
+.view-all-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.view-all-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.view-all-btn:hover {
+    background-color: #333;
+}
+
+.divider {
+    height: 4px;
+    /* Thickness of the divider */
+    background-color: #000;
+    /* Divider color */
+    width: 100%;
+    /* Full width */
+    margin: 20px 0;
+    /* Spacing */
+}
+
+
+.featured-items {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.featured-items h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.menu-items {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.menu-link {
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    font-weight: bold;
+    padding-bottom: 5px;
+    /* Space for underline */
+    transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+    color: #333;
+}
+
+/* Underline effect for the active menu item */
+.menu-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    /* Thickness of the underline */
+    background-color: #000;
+}
+
+/* Brand Banner */
+.brand-banner {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.brand-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.brand-logo img {
+    width: 40px;
+    /* Adjust the size as needed */
+    height: auto;
+}
+
+.brand-name {
+    text-transform: uppercase;
+}
+
+
+/* Featured Bags Section */
+.featured-bags {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.featured-bags h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.bags-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.bag-card {
+    position: relative;
+    width: 200px;
+    /* Set a fixed width for uniformity */
+    height: 250px;
+    /* Set a fixed height for uniformity */
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bag-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the entire card area */
+}
+
+.bag-name {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Footer */
+
+
+@media (max-width: 300px) {
+
+    .items-container,
+    .bags-container {
+        flex-direction: column;
+        /* Stack items vertically on smaller screens */
+        align-items: center;
+        /* Center align items */
+    }
+
+    .item-card,
+    .bag-card {
+        width: 90%;
+        /* Use more width on smaller screens */
+        margin: 10px 0;
+        /* Add margin for spacing */
+    }
+
+    .menu-items {
+        flex-direction: column;
+        /* Stack menu items */
+        gap: 10px;
+        /* Space between items */
+    }
+}
+
+
+hr {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 10px 0;
+}
+
+/* Responsive Footer - For Mobile View */
+
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f8f9fa;
+    /* Light background color */
+    border-top: 1px solid #dee2e6;
+    /* Subtle border on top */
+}
+
+.footer-left,
+.footer-middle,
+.footer-right {
+    flex: 1;
+    padding: 10px;
+    min-width: 250px;
+    /* Minimum width for each section */
+}
+
+h4 {
+    margin-bottom: 15px;
+    color: #343a40;
+    /* Darker color for headings */
+}
+
+p {
+    margin: 5px 0;
+    color: #6c757d;
+    /* Medium gray for paragraph text */
+}
+
+a {
+    color: #000;
+    /* Bootstrap primary color */
+    text-decoration: none;
+    /* Remove underline */
+}
+
+a:hover {
+    text-decoration: none;
+    /* Underline on hover */
+    color: #ff0000;
+    /* Change this to your desired hover color */
+    border-bottom: 2px solid #000;
+    /* Adds underline on hover */
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    /* Space between social icons */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1500px) {
+    .footer-container {
+        flex-direction: column;
+        /* Stack sections vertically on mobile */
+        align-items: center;
+        /* Center content */
+    }
+
+    .footer-left,
+    .footer-middle,
+    .footer-right {
+        text-align: center;
+        /* Center text for mobile */
+        margin-bottom: 20px;
+        /* Space between sections */
+    }
+
+    .social-icons {
+        justify-content: center;
+        /* Center social icons */
+    }
+}
+
+@media (min-width: 1500px) {
+    .footer-container {
+        flex-direction: row;
+        /* Arrange sections in a row on desktop */
+    }
+}

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intellux</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/products.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- Logo and Links -->
+            <a class="navbar-brand d-flex align-items-center" href="home.html">
+                <img src="assets/images/logo.png" alt="Purse Maison Logo" width="30" height="24">
+                <span class="ms-2">Interllux</span>
+            </a>
+
+            <!-- Navbar Links next to Logo -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Designer Brands</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Catalog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#foot">Contact us</a>
+                    </li>
+                </ul>
+                <!-- Icons aligned to the right -->
+                <div class="d-flex ms-auto">
+                    <a href="#" class="nav-link"><i class="bi bi-person"></i></a>
+                    <a href="#" class="nav-link"><i class="bi bi-search"></i></a>
+                    <a href="#" class="nav-link"><i class="bi bi-bag"></i></a>
+                    <a href="login.html" class="nav-link login-btn">Login</a>
+                </div>
+            </div>
+
+            <!-- Toggler for Mobile View -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+
+    <!-- Intro Text -->
+    <section class="intro-text text-center p-4 bg-light">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in tortor mauris. Etiam congue imperdiet
+            imperdiet. Duis pretium non quam at scelerisque. Quisque lacinia, purus sed ullamcorper mattis, mauris quam
+            tempor nunc, quis ultrices velit felis a ex. Proin viverra pharetra libero, eu tincidunt odio gravida
+            pulvinar.</p>
+    </section>
+
+    <!-- Filter and Sort Buttons -->
+    <section class="filter-sort d-flex justify-content-center my-4">
+        <!-- Brand Dropdown Button -->
+        <div class="dropdown me-2">
+            <button class="btn btn-outline-dark filter-btn dropdown-toggle" type="button" id="brandDropdown"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Brand
+            </button>
+            <ul class="dropdown-menu w-100" aria-labelledby="brandDropdown">
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Chanel')">Chanel</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Prada')">Prada</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Hermes')">Hermes</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Celine')">Celine</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Saint Laurent')">Saint Laurent</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Balenciaga')">Balenciaga</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Loewe')">Loewe</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Fendi')">Fendi</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Valentino')">Valentino</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Givenchy')">Givenchy</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Mulberry')">Mulberry</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Burberry')">Burberry</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Chloe')">Chloe</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Coach')">Coach</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Longchamp')">Longchamp</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Stella McCartney')">Stella McCartney</a>
+                </li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Balmain')">Balmain</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Goyard')">Goyard</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByBrand('Jw Anderson')">Jw Anderson</a></li>
+                <!-- Add other brands here -->
+            </ul>
+        </div>
+
+        <!-- Category Dropdown Button -->
+        <div class="dropdown me-2">
+            <button class="btn btn-outline-dark filter-btn dropdown-toggle" type="button" id="categoryDropdown"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Category
+            </button>
+            <ul class="dropdown-menu w-100" aria-labelledby="categoryDropdown">
+                <li><a class="dropdown-item" href="#" onclick="filterByCategory('Shoulder Bag')">Shoulder Bag</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByCategory('Handbag')">Handbag</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByCategory('Tote Bag')">Tote Bag</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByCategory('Crossbody Bag')">Crossbody Bag</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByCategory('Backpack')">Backpack</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByCategory('Top Handle Bag')">Top Handle Bag</a>
+                </li>
+                <li><a class="dropdown-item" href="#" onclick="filterByCategory('Hobo Bag')">Hobo Bag</a></li>
+                <li><a class="dropdown-item" href="#" onclick="filterByCategory('Satchel')">Satchel</a></li>
+                <!-- Add other categories here -->
+            </ul>
+        </div>
+
+        <!-- Sort By Dropdown -->
+        <div class="dropdown me-2">
+            <button class="btn btn-outline-dark filter-btn dropdown-toggle" type="button" id="sortByDropdown"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Sort By
+            </button>
+            <ul class="dropdown-menu w-100" aria-labelledby="sortByDropdown">
+                <li><a class="dropdown-item" href="#" onclick="sortBy('priceLowHigh')">Price (low to high)</a></li>
+                <li><a class="dropdown-item" href="#" onclick="sortBy('priceHighLow')">Price (high to low)</a></li>
+                <li><a class="dropdown-item" href="#" onclick="sortBy('nameAZ')">A to Z</a></li>
+                <li><a class="dropdown-item" href="#" onclick="sortBy('nameZA')">Z to A</a></li>
+            </ul>
+        </div>
+
+        <!-- Reset Button -->
+        <button class="btn btn-outline-secondary filter-btn" onclick="resetFilterSort()">Reset</button>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories py-4 text-center">
+        <div id="page-1" class="category-grid container page">
+            <div class="row">
+                <!-- Category Items -->
+                <div class="col-md-6 col-lg-4 p-3 category-item" data-brand="Chanel" data-category="Shoulder Bag"
+                    data-price="550000" data-name="Classic Flap Bag">
+                    <div class="category-item bg-light p-3">
+                        <img src="assets/images/product_bag.jpg" alt="Luxury Bag" class="img-fluid">
+                        <p class="fw-bold mt-2">Classic Flap Bag</p>
+                        <p class="fw-bold mt-2">Chanel</p>
+                        <p class="fw-bold mt-2">Shoulder Bag</p>
+                        <p class="text-muted">Iconic quilted leather with chain strap.</p>
+                        <p>₱ 550,000</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 p-3 category-item" data-brand="Louis Vuitton" data-category="Handbag"
+                    data-price="320000" data-name="Alma BB">
+                    <div class="category-item bg-light p-3">
+                        <img src="assets/images/product_bag.jpg" alt="Luxury Bag" class="img-fluid">
+                        <p class="fw-bold mt-2">Alma BB</p>
+                        <p class="fw-bold mt-2">Louis Vuitton</p>
+                        <p class="fw-bold mt-2">Handbag</p>
+                        <p class="text-muted">Compact and structured with a double zip.</p>
+                        <p>₱ 320,000</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 p-3 category-item" data-brand="Dior" data-category="Tote Bag"
+                    data-price="310000" data-name="Dior Book Tote">
+                    <div class="category-item bg-light p-3">
+                        <img src="assets/images/product_bag.jpg" alt="Luxury Bag" class="img-fluid">
+                        <p class="fw-bold mt-2">Dior Book Tote</p>
+                        <p class="fw-bold mt-2">Dior</p>
+                        <p class="fw-bold mt-2">Tote Bag</p>
+                        <p class="text-muted">Embroidered and spacious; versatile for travel</p>
+                        <p>₱ 310,000</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 p-3 category-item">
+                    <div class="category-item bg-light p-3">
+                        <img src="assets/images/product_bag.jpg" alt="Luxury Bag" class="img-fluid">
+                        <p class="fw-bold mt-2">Gucci Marmont Matelassé</p>
+                        <p class="fw-bold mt-2">Gucci</p>
+                        <p class="fw-bold mt-2">Shoulder bag</p>
+                        <p class="text-muted">Chevron design with antique gold-toned hardware.</p>
+                        <p>₱ 295,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3 category-item" data-brand="Bottega Veneta"
+                    data-category="Crossbody Bag" data-price="280000" data-name="Bottega Veneta Cassette">
+                    <div class="category-item bg-light p-3">
+                        <img src="assets/images/product_bag.jpg" alt="Luxury Bag" class="img-fluid">
+                        <p class="fw-bold mt-2">Bottega Veneta Cassette</p>
+                        <p class="fw-bold mt-2">Bottega Veneta</p>
+                        <p class="fw-bold mt-2">Crossbody Bag</p>
+                        <p class="text-muted">Iconic padded intrecciato design.</p>
+                        <p>₱ 280,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3 category-item" data-brand="Chanel" data-category="Shoulder Bag"
+                    data-price="550000" data-name="Classic Flap Bag">
+                    <div class="category-item bg-light p-3">
+                        <img src="assets/images/product_bag.jpg" alt="Luxury Bag" class="img-fluid">
+                        <p class="fw-bold mt-2">Chanel Boy Bag</p>
+                        <p class="fw-bold mt-2">Chanel</p>
+                        <p class="fw-bold mt-2">Shoulder bag</p>
+                        <p class="text-muted">Structured flap bag with bold hardware.</p>
+                        <p>₱ 620,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3 category-item" data-brand="Chanel" data-category="Shoulder Bag"
+                    data-price="550000" data-name="Classic Flap Bag">
+                    <div class="category-item bg-light p-3">
+                        <img src="assets/images/product_bag.jpg" alt="Luxury Bag" class="img-fluid">
+                        <p class="fw-bold mt-2">Prada Nylon Backpack</p>
+                        <p class="fw-bold mt-2">Prada</p>
+                        <p class="fw-bold mt-2">Backpack</p>
+                        <p class="text-muted">Durable, stylish backpack with logo plate.</p>
+                        <p>₱ 145,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3 category-item" data-brand="Chanel" data-category="Shoulder Bag"
+                    data-price="550000" data-name="Classic Flap Bag">
+                    <div class="category-item bg-light p-3">
+                        <img src="assets/images/product_bag.jpg" alt="Luxury Bag" class="img-fluid">
+                        <p class="fw-bold mt-2">Hermes Birkin 30</p>
+                        <p class="fw-bold mt-2">Hermes</p>
+                        <p class="fw-bold mt-2">Handbag</p>
+                        <p class="text-muted">Classic Hermes design, made of the finest leather.</p>
+                        <p>₱ 150,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3 category-item" data-brand="Chanel" data-category="Shoulder Bag"
+                    data-price="550000" data-name="Classic Flap Bag">
+                    <div class="category-item bg-light p-3">
+                        <img src="assets/images/product_bag.jpg" alt="Luxury Bag" class="img-fluid">
+                        <p class="fw-bold mt-2">Celine Belt Bag</p>
+                        <p class="fw-bold mt-2">Celine</p>
+                        <p class="fw-bold mt-2">Top Handle Bag</p>
+                        <p class="text-muted">Minimalist and sleek design with a top handle.</p>
+                        <p>₱ 280,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3 category-item" data-brand="Chanel" data-category="Shoulder Bag"
+                    data-price="550000" data-name="Classic Flap Bag">
+                    <div class="category-item bg-light p-3">
+                        <img src="assets/images/product_bag.jpg" alt="Luxury Bag" class="img-fluid">
+                        <p class="fw-bold mt-2">Saint Laurent Sac De Jour</p>
+                        <p class="fw-bold mt-2">Saint Laurent</p>
+                        <p class="fw-bold mt-2">Tote Bag</p>
+                        <p class="text-muted">Structured and elegant, perfect for everyday use.</p>
+                        <p>₱ 350,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3 category-item" data-brand="Chanel" data-category="Shoulder Bag"
+                    data-price="550000" data-name="Classic Flap Bag">
+                    <div class="category-item bg-light p-3">
+                        <img src="assets/images/product_bag.jpg" alt="Luxury Bag" class="img-fluid">
+                        <p class="fw-bold mt-2">Chanel Gabrielle</p>
+                        <p class="fw-bold mt-2">Chanel</p>
+                        <p class="fw-bold mt-2">Hobo Bag</p>
+                        <p class="text-muted">Mix of leather and chain strap with a unique structure.</p>
+                        <p>₱ 400,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3 category-item" data-brand="Chanel" data-category="Shoulder Bag"
+                    data-price="550000" data-name="Classic Flap Bag">
+                    <div class="category-item bg-light p-3">
+                        <img src="assets/images/product_bag.jpg" alt="Luxury Bag" class="img-fluid">
+                        <p class="fw-bold mt-2">Dior Saddle Bag</p>
+                        <p class="fw-bold mt-2">Dior</p>
+                        <p class="fw-bold mt-2">Crossbody Bag</p>
+                        <p class="text-muted">Iconic shape with ‘CD’ logo hardware.</p>
+                        <p>₱ 350,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3 category-item" data-brand="Chanel" data-category="Shoulder Bag"
+                    data-price="550000" data-name="Classic Flap Bag">
+                    <div class="category-item bg-light p-3">
+                        <img src="assets/images/product_bag.jpg" alt="Luxury Bag" class="img-fluid">
+                        <p class="fw-bold mt-2">Louis Vuitton Neverfull</p>
+                        <p class="fw-bold mt-2">Louis Vuitton</p>
+                        <p class="fw-bold mt-2">Tote Bag</p>
+                        <p class="text-muted">Spacious with iconic monogram canvas.</p>
+                        <p>₱ 190,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3 category-item" data-brand="Chanel" data-category="Shoulder Bag"
+                    data-price="550000" data-name="Classic Flap Bag">
+                    <div class="category-item bg-light p-3">
+                        <img src="assets/images/product_bag.jpg" alt="Luxury Bag" class="img-fluid">
+                        <p class="fw-bold mt-2">Balenciaga City Bag</p>
+                        <p class="fw-bold mt-2">Balenciaga</p>
+                        <p class="fw-bold mt-2">Satchel</p>
+                        <p class="text-muted">Iconic, edgy style with tassels.</p>
+                        <p>₱ 210,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3 category-item" data-brand="Chanel" data-category="Shoulder Bag"
+                    data-price="550000" data-name="Classic Flap Bag">
+                    <div class="category-item bg-light p-3">
+                        <img src="assets/images/product_bag.jpg" alt="Luxury Bag" class="img-fluid">
+                        <p class="fw-bold mt-2">Loewe Puzzle Bag</p>
+                        <p class="fw-bold mt-2">Loewe</p>
+                        <p class="fw-bold mt-2">Shoulder Bag</p>
+                        <p class="text-muted">Geometric design with unique shape.</p>
+                        <p>₱ 280,000</p>
+                    </div>
+                </div>
+                <!-- Duplicate this block for other category items -->
+                <!-- Repeat similar blocks here for other products -->
+            </div>
+        </div>
+
+        <div id="page-2" class="category-grid container page" style="display: none;">
+            <!-- Products for Page 2 -->
+            <div class="row">
+                <div class="col-md-6 col-lg-4 p-3">
+                    <div class="category-item bg-light p-3">
+                        <img src="13433932_53139193_600.webp" alt="Bag 2" class="img-fluid">
+                        <p class="fw-bold mt-2">Fendi Peekaboo</p>
+                        <p class="fw-bold mt-2">Fendi</p>
+                        <p class="fw-bold mt-2">Handbag</p>
+                        <p class="text-muted">Structured design with a dual interior.</p>
+                        <p>₱ 420,000</p>
+                    </div>
+                </div>
+                <!-- Repeat for other products in this "page" -->
+
+                <div class="col-md-6 col-lg-4 p-3">
+                    <div class="category-item bg-light p-3">
+                        <img src="13433932_53139193_600.webp" alt="Bag 2" class="img-fluid">
+                        <p class="fw-bold mt-2">Gucci Dionysus</p>
+                        <p class="fw-bold mt-2">Gucci</p>
+                        <p class="fw-bold mt-2">Crossbody Bag</p>
+                        <p class="text-muted">Structured shape with tiger head spur clasp.</p>
+                        <p>₱ 260,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3">
+                    <div class="category-item bg-light p-3">
+                        <img src="13433932_53139193_600.webp" alt="Bag 2" class="img-fluid">
+                        <p class="fw-bold mt-2">Valentino Rockstud Tote</p>
+                        <p class="fw-bold mt-2">Valentino</p>
+                        <p class="fw-bold mt-2">Tote Bag</p>
+                        <p class="text-muted">Studded detailing with ample space.</p>
+                        <p>₱ 290,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3">
+                    <div class="category-item bg-light p-3">
+                        <img src="13433932_53139193_600.webp" alt="Bag 2" class="img-fluid">
+                        <p class="fw-bold mt-2">Givenchy Antigona</p>
+                        <p class="fw-bold mt-2">Givenchy</p>
+                        <p class="fw-bold mt-2">Satchel</p>
+                        <p class="text-muted">Structured, classic satchel with a minimalistic design.</p>
+                        <p>₱ 250,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3">
+                    <div class="category-item bg-light p-3">
+                        <img src="13433932_53139193_600.webp" alt="Bag 2" class="img-fluid">
+                        <p class="fw-bold mt-2">Mulberry Bayswater</p>
+                        <p class="fw-bold mt-2">Mulberry</p>
+                        <p class="fw-bold mt-2">Tote Bag</p>
+                        <p class="text-muted">Classic design with postman’s lock.</p>
+                        <p>₱ 150,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3">
+                    <div class="category-item bg-light p-3">
+                        <img src="13433932_53139193_600.webp" alt="Bag 2" class="img-fluid">
+                        <p class="fw-bold mt-2">Burberry TB Bag</p>
+                        <p class="fw-bold mt-2">Burberry</p>
+                        <p class="fw-bold mt-2">Crossbody Bag</p>
+                        <p class="text-muted">Featuring the iconic TB logo hardware.</p>
+                        <p>₱ 220,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3">
+                    <div class="category-item bg-light p-3">
+                        <img src="13433932_53139193_600.webp" alt="Bag 2" class="img-fluid">
+                        <p class="fw-bold mt-2">Chloe Faye</p>
+                        <p class="fw-bold mt-2">Chloe</p>
+                        <p class="fw-bold mt-2">Shoulder Bag</p>
+                        <p class="text-muted">Signature ring and chain embellishment.</p>
+                        <p>₱ 195,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3">
+                    <div class="category-item bg-light p-3">
+                        <img src="13433932_53139193_600.webp" alt="Bag 2" class="img-fluid">
+                        <p class="fw-bold mt-2">Coach Tabby</p>
+                        <p class="fw-bold mt-2">Coach</p>
+                        <p class="fw-bold mt-2">Crossbody Bag</p>
+                        <p class="text-muted">Soft and structured with a top handle and crossbody strap.</p>
+                        <p>₱ 450,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3">
+                    <div class="category-item bg-light p-3">
+                        <img src="13433932_53139193_600.webp" alt="Bag 2" class="img-fluid">
+                        <p class="fw-bold mt-2">YSL Lou Camera Bag</p>
+                        <p class="fw-bold mt-2">Saint Laurent</p>
+                        <p class="fw-bold mt-2">Crossbody Bag</p>
+                        <p class="text-muted">Small, compact design with a tassel.</p>
+                        <p>₱ 135,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3">
+                    <div class="category-item bg-light p-3">
+                        <img src="13433932_53139193_600.webp" alt="Bag 2" class="img-fluid">
+                        <p class="fw-bold mt-2">Longchamp Le Pliage</p>
+                        <p class="fw-bold mt-2">Longchamp</p>
+                        <p class="fw-bold mt-2">Tote Bag</p>
+                        <p class="text-muted">Foldable, lightweight tote perfect for travel.</p>
+                        <p>₱ 150,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3">
+                    <div class="category-item bg-light p-3">
+                        <img src="13433932_53139193_600.webp" alt="Bag 2" class="img-fluid">
+                        <p class="fw-bold mt-2">Stella McCartney Falabella</p>
+                        <p class="fw-bold mt-2">Stella McCartney</p>
+                        <p class="fw-bold mt-2">Tote Bag</p>
+                        <p class="text-muted">Signature chain detailing.</p>
+                        <p>₱ 120,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3">
+                    <div class="category-item bg-light p-3">
+                        <img src="13433932_53139193_600.webp" alt="Bag 2" class="img-fluid">
+                        <p class="fw-bold mt-2">Celine Luggage Tote</p>
+                        <p class="fw-bold mt-2">Celine</p>
+                        <p class="fw-bold mt-2">Tote Bag</p>
+                        <p class="text-muted">Boxy shape with elegant winged sides.</p>
+                        <p>₱ 295,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3">
+                    <div class="category-item bg-light p-3">
+                        <img src="13433932_53139193_600.webp" alt="Bag 2" class="img-fluid">
+                        <p class="fw-bold mt-2">Balmain B-Buzz</p>
+                        <p class="fw-bold mt-2">Balmain</p>
+                        <p class="fw-bold mt-2">Shoulder Bag</p>
+                        <p class="text-muted">With bold ‘B’ logo and unique structure.</p>
+                        <p>₱ 220,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3">
+                    <div class="category-item bg-light p-3">
+                        <img src="13433932_53139193_600.webp" alt="Bag 2" class="img-fluid">
+                        <p class="fw-bold mt-2">Goyard Saint Louis</p>
+                        <p class="fw-bold mt-2">Goyard</p>
+                        <p class="fw-bold mt-2">Tote Bag</p>
+                        <p class="text-muted">Iconic chevron pattern and lightweight design.</p>
+                        <p>₱ 135,000</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 p-3">
+                    <div class="category-item bg-light p-3">
+                        <img src="13433932_53139193_600.webp" alt="Bag 2" class="img-fluid">
+                        <p class="fw-bold mt-2">JW Anderson Anchor Bag</p>
+                        <p class="fw-bold mt-2">JW Anderson</p>
+                        <p class="fw-bold mt-2">Shoulder Bag</p>
+                        <p class="text-muted">Compact with anchor logo hardware.</p>
+                        <p>₱ 850,000</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Pagination -->
+    <section class="pagination text-center my-4">
+        <ul class="pagination justify-content-center">
+            <li class="page-item"><a class="page-link" href="javascript:void(0);" onclick="showPage(1)"
+                    data-page="1">1</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);" onclick="showPage(2)"
+                    data-page="2">2</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);" onclick="showPage(3)"
+                    data-page="3">3</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);" onclick="showPage(4)"
+                    data-page="4">4</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);" onclick="showPage(5)"
+                    data-page="5">5</a></li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div id="foot" class="footer-container">
+            <!-- Left Side -->
+            <div class="footer-left">
+                <h4>Contact Us</h4>
+                <p><a href="https://wa.me/639161195710" target="_blank">Chat via WhatsApp</a></p>
+                <p>Interllux WhatsApp Link</p>
+                <p>WhatsApp #: +639161195710</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/yourpage" target="_blank">
+                        <img src="assets/images/fb.png" alt="Facebook" width="30">
+                    </a>
+                    <a href="https://www.instagram.com/yourpage" target="_blank">
+                        <img src="assets/images/ig.png" alt="Instagram" width="30">
+                    </a>
+                    <a href="https://www.tiktok.com/@yourpage" target="_blank">
+                        <img src="assets/images/tiktok.png" alt="TikTok" width="30">
+                    </a>
+                    <a href="https://wa.me/639161195710" target="_blank">
+                        <img src="assets/images/watsapp.png" alt="WhatsApp" width="30">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Middle Part -->
+            <div class="footer-middle">
+                <h4>Interllux</h4>
+                <p>Phone: +639161195710</p>
+            </div>
+
+            <!-- Right Side -->
+            <div class="footer-right footer-information">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="ContactUs.html">Contact Us</a></li>
+                    <li><a href="terms-and-conditions.html">Terms and Condition</a></li>
+                    <li><a href="return-and-cancellation.html">Return and Cancellation</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="refund-policy.html">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/products.js"></script>
+</body>
+
+</html>

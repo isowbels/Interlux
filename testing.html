@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Example</title>
+    <style>
+        /* Simple styling for the product list */
+        .product-list {
+            list-style: none;
+            padding: 0;
+        }
+        .product {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product List</h1>
+
+    <label for="sortSelect">Sort By:</label>
+    <select id="sortSelect">
+        <option value="name-asc">Name A to Z</option>
+        <option value="name-desc">Name Z to A</option>
+        <option value="price-asc">Price Low to High</option>
+        <option value="price-desc">Price High to Low</option>
+    </select>
+
+    <ul class="product-list" id="productList">
+        <li class="product" data-name="Bag" data-price="29.99">Bag - $29.99</li>
+        <li class="product" data-name="Shoes" data-price="49.99">Shoes - $49.99</li>
+        <li class="product" data-name="Hat" data-price="19.99">Hat - $19.99</li>
+        <li class="product" data-name="Watch" data-price="99.99">Watch - $99.99</li>
+    </ul>
+
+    <script>
+        // Sorting function
+        const sortProducts = (criteria) => {
+            const list = document.getElementById('productList');
+            const items = Array.from(list.getElementsByClassName('product'));
+
+            items.sort((a, b) => {
+                const aValue = criteria.includes('name') ? a.getAttribute('data-name') : parseFloat(a.getAttribute('data-price'));
+                const bValue = criteria.includes('name') ? b.getAttribute('data-name') : parseFloat(b.getAttribute('data-price'));
+
+                if (criteria.includes('asc')) {
+                    return aValue > bValue ? 1 : -1;
+                } else {
+                    return aValue < bValue ? 1 : -1;
+                }
+            });
+
+            // Clear the list and append sorted items
+            list.innerHTML = '';
+            items.forEach(item => list.appendChild(item));
+        };
+
+        // Event listener for the select dropdown
+        document.getElementById('sortSelect').addEventListener('change', (event) => {
+            sortProducts(event.target.value);
+        });
+    </script>
+</body>
+</html>
